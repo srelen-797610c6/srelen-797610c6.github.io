@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一本道理不卡一二三区在线观看 - 视频条目聚合与观看指引</title>
+  <meta name="description" content="一本道理不卡一二三区在线观看聚合页，提供具体视频条目、分类频道、更新动态与观看路径解析，适合想系统查找一本道理系列内容的用户。">
+  <meta name="keywords" content="一本道理系列, 一二三区视频, 不卡顿观看, 道理讲解视频, 观看路径">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232b3b4e'/%3E%3Cpath d='M8 20 L16 6 L24 20 L20 24 L16 16 L12 24 Z' fill='%23e8b84b'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f4f1ec;
+      --panel: #ffffff;
+      --ink: #1e2a36;
+      --ink-soft: #4a5a68;
+      --muted: #7a8a97;
+      --line: #dcd6cc;
+      --brand: #2b3b4e;
+      --brand-soft: #eef1f4;
+      --accent: #e8b84b;
+      --accent-dark: #b88a1e;
+      --link: #2b5f8e;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(30, 42, 54, 0.06);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --sticky-offset: 104px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+      padding-top: var(--sticky-offset);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* 吸顶公告条 + 页头 */
+    .sticky-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .announce {
+      background: var(--brand);
+      color: #f2efe7;
+      font-size: 13px;
+      padding: 6px 0;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    .announce strong { color: var(--accent); font-weight: 600; }
+    .site-header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .brand svg { width: 36px; height: 36px; }
+    .brand-text {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .main-nav a {
+      padding: 5px 10px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .main-nav a:hover { background: var(--brand-soft); text-decoration: none; color: var(--brand); }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .search-box {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .search-box input {
+      border: 0;
+      padding: 6px 10px;
+      font-size: 13px;
+      width: 150px;
+      outline: none;
+      font-family: var(--font);
+    }
+    .search-box button {
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      padding: 0 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .search-box button:hover { background: #1e2a36; }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #2b3b4e 0%, #3d5166 100%);
+      color: #f4f1ec;
+      padding: 48px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: -80px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(232, 184, 75, 0.08);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 34px;
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #d8d2c6;
+      max-width: 560px;
+      margin-bottom: 22px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary, .btn-ghost {
+      display: inline-block;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: #1e2a36; }
+    .btn-primary:hover { background: #f0c65e; text-decoration: none; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.4); color: #f4f1ec; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    .hero-visual svg { width: 100%; height: auto; max-width: 400px; margin-left: auto; }
+
+    /* 布局：三栏门户 */
+    .layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: 28px;
+      align-items: start;
+    }
+    .col-left { position: sticky; top: calc(var(--sticky-offset) + 16px); }
+    .channel-nav {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 0;
+      box-shadow: var(--shadow);
+    }
+    .channel-nav h3 {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 0 16px 8px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .channel-nav a {
+      display: block;
+      padding: 7px 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      border-left: 3px solid transparent;
+    }
+    .channel-nav a:hover {
+      background: var(--brand-soft);
+      border-left-color: var(--accent);
+      text-decoration: none;
+      color: var(--brand);
+    }
+
+    .col-main { min-width: 0; }
+    .col-right { position: sticky; top: calc(var(--sticky-offset) + 16px); display: flex; flex-direction: column; gap: 20px; }
+
+    /* 板块通用 */
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .section h2 {
+      font-size: 21px;
+      color: var(--brand);
+      margin-bottom: 6px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .section p { margin-bottom: 12px; color: var(--ink-soft); }
+
+    /* 概览 */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .overview-item {
+      background: #faf8f4;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .overview-item h4 { font-size: 15px; color: var(--brand); margin-bottom: 4px; }
+    .overview-item p { font-size: 13px; margin: 0; color: var(--ink-soft); }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 6px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.15s;
+    }
+    .card:hover { box-shadow: 0 4px 14px rgba(30,42,54,0.1); }
+    .card img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+    .card-body { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; }
+    .card-body h3 { font-size: 15px; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+    .tag {
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 3px;
+      background: var(--brand-soft);
+      color: var(--ink-soft);
+    }
+    .tag.hot { background: #fdf2dc; color: var(--accent-dark); }
+    .card-body p { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; flex: 1; }
+    .card-meta { font-size: 12px; color: var(--muted); display: flex; gap: 10px; }
+
+    /* 紧凑列表 */
+    .list-rows { display: flex; flex-direction: column; gap: 0; }
+    .list-row {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+    }
+    .list-row:last-child { border-bottom: 0; }
+    .list-row .idx {
+      font-size: 12px;
+      color: var(--muted);
+      min-width: 22px;
+      font-weight: 600;
+    }
+    .list-row .name { font-weight: 600; color: var(--brand); white-space: nowrap; }
+    .list-row .desc { color: var(--ink-soft); font-size: 13px; }
+    .list-row .date { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .cat-item {
+      display: block;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #faf8f4;
+      font-size: 14px;
+      color: var(--brand);
+      font-weight: 600;
+      transition: 0.15s;
+    }
+    .cat-item:hover {
+      border-color: var(--accent);
+      background: #fdf8ec;
+      text-decoration: none;
+    }
+    .cat-item span { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+
+    /* 深度解析 */
+    .deep h3 { font-size: 17px; color: var(--brand); margin: 20px 0 8px; }
+    .deep h3:first-of-type { margin-top: 8px; }
+    .deep ul { padding-left: 20px; margin: 8px 0 14px; list-style: disc; color: var(--ink-soft); }
+    .deep li { margin-bottom: 5px; font-size: 14px; }
+    .deep p { font-size: 14px; line-height: 1.8; }
+
+    /* FAQ */
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+    }
+    .faq details:last-child { border-bottom: 0; }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--brand);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; font-size: 18px; color: var(--muted); font-weight: 400; }
+    .faq details[open] summary::after { content: '−'; }
+    .faq details p { font-size: 14px; color: var(--ink-soft); padding: 8px 0 4px; margin: 0; }
+
+    /* 评论 */
+    .comments { display: flex; flex-direction: column; gap: 0; }
+    .comment {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+    }
+    .comment:last-child { border-bottom: 0; }
+    .comment .who { font-weight: 600; color: var(--brand); margin-right: 6px; }
+    .comment .txt { color: var(--ink-soft); }
+    .comment .time { font-size: 11px; color: var(--muted); margin-left: 8px; }
+
+    /* 资讯 */
+    .news-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .news-item:last-child { border-bottom: 0; }
+    .news-item img {
+      width: 90px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .news-item h4 { font-size: 15px; color: var(--brand); margin-bottom: 3px; }
+    .news-item p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+    .news-item .date { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* 相关推荐 */
+    .rel-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .rel-tags a {
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      background: #faf8f4;
+    }
+    .rel-tags a:hover { border-color: var(--accent); color: var(--brand); text-decoration: none; }
+
+    /* 侧栏 */
+    .side-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px 18px;
+      box-shadow: var(--shadow);
+    }
+    .side-card h3 {
+      font-size: 15px;
+      color: var(--brand);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .side-list li {
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .side-list li:last-child { border-bottom: 0; }
+    .side-list .s-name { color: var(--brand); font-weight: 500; }
+    .side-list .s-meta { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
+    /* 榜单 */
+    .rank-list { counter-reset: rank; }
+    .rank-list li {
+      counter-increment: rank;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 7px 0;
+      font-size: 14px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .rank-list li:last-child { border-bottom: 0; }
+    .rank-list li::before {
+      content: counter(rank);
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 13px;
+      min-width: 18px;
+    }
+    .rank-list .r-name { color: var(--brand); font-weight: 500; }
+    .rank-list .r-score { margin-left: auto; font-size: 12px; color: var(--muted); }
+
+    /* 时间线 */
+    .timeline { margin-top: 8px; }
+    .timeline li {
+      display: flex;
+      gap: 12px;
+      padding: 8px 0 8px 16px;
+      border-left: 2px solid var(--line);
+      position: relative;
+      font-size: 14px;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 15px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .timeline .tl-date { color: var(--muted); font-size: 12px; min-width: 64px; }
+    .timeline .tl-name { color: var(--brand); font-weight: 500; }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--brand);
+      color: #c9c3b8;
+      padding: 36px 0 24px;
+      font-size: 13px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 28px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .footer-brand svg { width: 28px; height: 28px; }
+    .footer-brand strong { color: #f4f1ec; font-size: 17px; }
+    .footer-inner p { line-height: 1.7; color: #a8a196; }
+    .footer-inner h4 { color: #e8e3d9; font-size: 14px; margin-bottom: 10px; }
+    .footer-inner li { margin-bottom: 5px; }
+    .footer-inner a { color: #b8b1a5; }
+    .footer-inner a:hover { color: var(--accent); }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 24px auto 0;
+      padding: 16px 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      color: #8f887d;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 搜索结果提示 */
+    .search-feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: #fdf2dc;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--accent-dark);
+    }
+
+    /* 锚点偏移 */
+    [id] { scroll-margin-top: calc(var(--sticky-offset) + 10px); }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout { grid-template-columns: 1fr 280px; }
+      .col-left { display: none; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .cat-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      :root { --sticky-offset: 132px; }
+      body { padding-top: var(--sticky-offset); }
+      .header-inner { padding: 8px 14px; gap: 8px; }
+      .main-nav { order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+      .main-nav a { font-size: 13px; padding: 4px 8px; }
+      .search-box input { width: 110px; }
+      .hero { padding: 32px 0 36px; }
+      .hero h1 { font-size: 26px; }
+      .layout { grid-template-columns: 1fr; padding: 20px 14px 32px; gap: 20px; }
+      .col-right { position: static; }
+      .section { padding: 18px 16px 20px; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .list-row { flex-wrap: wrap; gap: 4px 12px; }
+      .list-row .date { margin-left: 0; }
+      .news-item img { width: 70px; height: 52px; }
+    }
+    @media (max-width: 380px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <div class="sticky-top">
+    <div class="announce">
+      本周新增 <strong>11 条</strong> 一本道理系列视频条目 · 11 月 8 日更新「一二三区」专题索引
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="brand" aria-label="一本道理不卡一二三区在线观看 首页">
+          <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="36" height="36" rx="8" fill="#2b3b4e"/>
+            <path d="M9 23 L18 7 L27 23 L22 27 L18 18 L14 27 Z" fill="#e8b84b"/>
+          </svg>
+          <span class="brand-text">一本道理不卡一二三区在线观看</span>
+        </a>
+        <nav class="main-nav" aria-label="主题导航">
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选条目</a>
+          <a href="/#updates">更新动态</a>
+          <a href="/#categories">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">观看路径</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">用户评论</a>
+          <a href="/#news">相关资讯</a>
+        </nav>
+        <div class="header-actions">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索条目或类型" aria-label="搜索条目或类型">
+            <button type="button" id="searchBtn">搜索</button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>一本道理不卡一二三区在线观看</h1>
+        <p class="hero-desc">
+          这里汇聚「一本道理」系列在不同分区中的具体视频条目、主题分类与观看顺序参考。页面整理了讲解类、对谈类、案例拆解类等方向的具体内容，每条都标注适用场景与时长，方便按需查找。
+        </p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选条目</a>
+          <a href="/#guide" class="btn-ghost">查看观看路径</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="360" height="200" rx="10" fill="#3d5166" stroke="#5a7088" stroke-width="1.5"/>
+          <rect x="40" y="50" width="150" height="90" rx="6" fill="#2b3b4e"/>
+          <polygon points="100,78 100,112 128,95" fill="#e8b84b"/>
+          <rect x="205" y="50" width="155" height="12" rx="3" fill="#5a7088"/>
+          <rect x="205" y="72" width="135" height="10" rx="3" fill="#4a5a68"/>
+          <rect x="205" y="92" width="145" height="10" rx="3" fill="#4a5a68"/>
+          <rect x="205" y="112" width="110" height="10" rx="3" fill="#4a5a68"/>
+          <rect x="40" y="155" width="100" height="55" rx="5" fill="#4a5a68"/>
+          <rect x="155" y="155" width="100" height="55" rx="5" fill="#4a5a68"/>
+          <rect x="270" y="155" width="90" height="55" rx="5" fill="#4a5a68"/>
+          <circle cx="340" cy="80" r="22" fill="#e8b84b" opacity="0.9"/>
+          <path d="M332 80 L338 86 L350 72" stroke="#2b3b4e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="layout">
+
+    <!-- 左栏频道 -->
+    <aside class="col-left">
+      <nav class="channel-nav" aria-label="频道索引">
+        <h3>频道索引</h3>
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观看路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#related">相关推荐</a>
+        <a href="/#rank">热门榜单</a>
+        <a href="/#timeline">条目时间线</a>
+      </nav>
+    </aside>
+
+    <!-- 中栏主内容 -->
+    <main class="col-main">
+
+      <!-- 1. 领域概览 -->
+      <section class="section" id="overview">
+        <h2>一本道理系列内容方向概览</h2>
+        <p class="section-sub">按内容形态与适用场景梳理当前可观看的具体方向</p>
+        <p>
+          「一本道理」系列主要围绕生活决策、职场沟通、消费判断等日常议题展开讲解。内容按「一二三区」做了粗分类：一区偏重基础概念和常见误区拆解，二区侧重具体案例与实操复盘，三区则收录对谈、问答和听众来信回应。目前可观看的条目覆盖单集讲解、系列专题、直播回放三种时长形态，单集多在 12—25 分钟之间，专题与回放则常在 40 分钟以上。
+        </p>
+        <p>
+          从主题方向看，目前条目集中在三个大类：消费决策与预算管理、人际关系与沟通边界、信息筛选与判断方法。每个方向下都有具体的代表条目，比如讲「订阅制消费怎么算总账」的消费类单集，或讨论「拒绝同事临时请求的三种说法」的沟通类专题。对谈类内容则更多邀请不同职业背景的嘉宾，围绕具体场景交换经验。
+        </p>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <h4>单集讲解</h4>
+            <p>12—25 分钟，一个具体问题配一条可操作思路，适合通勤或碎片时间观看。</p>
+          </div>
+          <div class="overview-item">
+            <h4>系列专题</h4>
+            <p>3—6 集为一组，围绕同一主题逐步展开，适合系统了解某个方向。</p>
+          </div>
+          <div class="overview-item">
+            <h4>对谈与问答</h4>
+            <p>40 分钟以上，嘉宾经验与听众来信回应，适合延伸视角、寻找同类问题参考。</p>
+          </div>
+          <div class="overview-item">
+            <h4>案例复盘</h4>
+            <p>以具体事件为线索拆解决策过程，常配时间线与对照表，适合对照自身情况。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <h2>精选条目推荐</h2>
+        <p class="section-sub">按主题方向挑选的具体视频条目</p>
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli01/400/300" alt="订阅制消费总账拆解视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>订阅制消费怎么算总账</h3>
+              <div class="tag-row"><span class="tag">消费决策</span><span class="tag hot">本周热门</span><span class="tag">单集</span></div>
+              <p>把视频会员、云存储、健身月卡等订阅项逐项列出，演示年度总支出算法与取舍顺序。适合想理清固定支出的人。</p>
+              <div class="card-meta"><span>18 分钟</span><span>9.2 分</span><span>3.4 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli02/400/300" alt="拒绝同事临时请求的三种说法视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>拒绝同事临时请求的三种说法</h3>
+              <div class="tag-row"><span class="tag">沟通边界</span><span class="tag">职场</span><span class="tag">单集</span></div>
+              <p>用三个具体职场场景演示如何在不伤关系的前提下划出时间边界，附带话术对比和后续跟进建议。</p>
+              <div class="card-meta"><span>15 分钟</span><span>8.9 分</span><span>2.8 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli03/400/300" alt="信息筛选三步法专题封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>信息筛选三步法</h3>
+              <div class="tag-row"><span class="tag">信息判断</span><span class="tag">系列</span><span class="tag hot">编辑推荐</span></div>
+              <p>从来源核查、交叉比对到时效判断，三集分别对应一个步骤，每集配一个近期信息案例做演示。</p>
+              <div class="card-meta"><span>3 集 / 共 52 分钟</span><span>9.0 分</span><span>4.1 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli04/400/300" alt="预算分配中的三档比例视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>预算分配中的三档比例</h3>
+              <div class="tag-row"><span class="tag">预算管理</span><span class="tag">消费决策</span><span class="tag">单集</span></div>
+              <p>讲固定支出、弹性支出和储备金三档的划分依据，用一份月收入示例演示不同比例下的结果差异。</p>
+              <div class="card-meta"><span>20 分钟</span><span>8.7 分</span><span>2.2 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli05/400/300" alt="对谈嘉宾聊自由职业收入波动视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>对谈：自由职业的收入波动怎么应对</h3>
+              <div class="tag-row"><span class="tag">对谈</span><span class="tag">收入管理</span><span class="tag">长视频</span></div>
+              <p>嘉宾分享淡旺季收入差距的实际处理方式，涉及应急储备、项目排期和报价调整三个具体做法。</p>
+              <div class="card-meta"><span>46 分钟</span><span>8.8 分</span><span>1.9 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli06/400/300" alt="案例复盘一次冲动购买的全过程视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>案例复盘：一次冲动购买的全过程</h3>
+              <div class="tag-row"><span class="tag">案例复盘</span><span class="tag">消费决策</span><span class="tag">单集</span></div>
+              <p>以一件具体商品为例，还原从广告触达到下单的决策链条，指出其中三个可提前设置的冷静节点。</p>
+              <div class="card-meta"><span>22 分钟</span><span>8.6 分</span><span>1.6 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli07/400/300" alt="家庭会议沟通流程专题封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>家庭会议沟通流程</h3>
+              <div class="tag-row"><span class="tag">沟通边界</span><span class="tag">家庭</span><span class="tag">系列</span></div>
+              <p>四集分别讲会前议题收集、发言顺序、争议暂停规则和会后记录，每集配一份可打印的流程清单。</p>
+              <div class="card-meta"><span>4 集 / 共 68 分钟</span><span>8.5 分</span><span>1.2 万次观看</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/yiben-daoli08/400/300" alt="听众来信回应如何面对催促视频封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3>听众来信：如何面对反复催促</h3>
+              <div class="tag-row"><span class="tag">问答</span><span class="tag">沟通边界</span><span class="tag">单集</span></div>
+              <p>回应一封关于被反复催促的来信，拆解催促背后的三种常见动机，并分别给出对应回应方式。</p>
+              <div class="card-meta"><span>17 分钟</span><span>8.4 分</span><span>1.5 万次观看</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="section" id="updates">
+        <h2>最新更新动态</h2>
+        <p class="section-sub">2026 年 11 月 8 日前后的条目上线与更新记录</p>
+        <div class="list-rows">
+          <div class="list-row"><span class="idx">01</span><span class="name">订阅制消费怎么算总账</span><span class="desc">补充了云存储与健身类订阅的最新价格区间，时长不变。</span><span class="date">11 月 8 日</span></div>
+          <div class="list-row"><span class="idx">02</span><span class="name">信息筛选三步法</span><span class="desc">第三集「时效判断」新增两个 10 月信息案例。</span><span class="date">11 月 7 日</span></div>
+          <div class="list-row"><span class="idx">03</span><span class="name">对谈：自由职业的收入波动怎么应对</span><span class="desc">完整版上线，含 8 分钟未在直播中出现的补充问答。</span><span class="date">11 月 6 日</span></div>
+          <div class="list-row"><span class="idx">04</span><span class="name">拒绝同事临时请求的三种说法</span><span class="desc">新增一段关于远程协作场景的补充说明。</span><span class="date">11 月 5 日</span></div>
+          <div class="list-row"><span class="idx">05</span><span class="name">预算分配中的三档比例</span><span class="desc">修正了示例中储备金比例的表述，数据未变动。</span><span class="date">11 月 4 日</span></div>
+          <div class="list-row"><span class="idx">06</span><span class="name">家庭会议沟通流程</span><span class="desc">第四集会后记录模板开放下载，附填写示例。</span><span class="date">11 月 3 日</span></div>
+          <div class="list-row"><span class="idx">07</span><span class="name">案例复盘：一次冲动购买的全过程</span><span class="desc">评论区补充了关于分期付款场景的讨论摘要。</span><span class="date">11 月 2 日</span></div>
+          <div class="list-row"><span class="idx">08</span><span class="name">听众来信：如何面对反复催促</span><span class="desc">新增来信人后续反馈，作为片尾补充。</span><span class="date">10 月 31 日</span></div>
+          <div class="list-row"><span class="idx">09</span><span class="name">一本道理·三区问答精选</span><span class="desc">第 12 期上线，收录 6 个关于时间安排的提问。</span><span class="date">10 月 29 日</span></div>
+          <div class="list-row"><span class="idx">10</span><span class="name">消费决策中的比价误区</span><span class="desc">新条目上线，讲三个常见比价误区及对照方法。</span><span class="date">10 月 27 日</span></div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <h2>按主题分类查找</h2>
+        <p class="section-sub">点击进入对应方向的具体条目集合</p>
+        <div class="cat-grid">
+          <a href="/#featured" class="cat-item">消费决策<span>预算 · 订阅 · 比价</span></a>
+          <a href="/#featured" class="cat-item">沟通边界<span>职场 · 家庭 · 拒绝</span></a>
+          <a href="/#featured" class="cat-item">信息判断<span>来源 · 比对 · 时效</span></a>
+          <a href="/#featured" class="cat-item">收入管理<span>波动 · 储备 · 报价</span></a>
+          <a href="/#featured" class="cat-item">案例复盘<span>决策链 · 时间线</span></a>
+          <a href="/#featured" class="cat-item">对谈问答<span>嘉宾 · 来信 · 回应</span></a>
+          <a href="/#featured" class="cat-item">时间安排<span>优先级 · 排期</span></a>
+          <a href="/#featured" class="cat-item">消费心理<span>冲动 · 冷静期</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section deep" id="deep">
+        <h2>一本道理系列的内容差异与选择依据</h2>
+        <p class="section-sub">从类型、时长和判断维度拆解不同条目的特点</p>
+
+        <h3>单集讲解与系列专题的区别</h3>
+        <p>
+          单集讲解通常围绕一个具体问题展开，比如「订阅制消费怎么算总账」或「拒绝同事临时请求的三种说法」，结构上先描述问题场景，再给出可操作的做法，最后用一两个反例说明边界。系列专题则把一个大方向拆成若干集，比如「信息筛选三步法」分成来源核查、交叉比对、时效判断三集，每集解决一个步骤，三集连起来才形成完整方法。如果只是想解决眼下某个具体问题，单集效率更高；如果想系统了解一个方向，系列专题的连贯性更好。
+        </p>
+
+        <h3>对谈与问答类内容的适用场景</h3>
+        <p>
+          对谈类条目时长通常在 40 分钟以上，嘉宾背景不同，讨论会涉及具体经验而非通用结论。比如「对谈：自由职业的收入波动怎么应对」里，嘉宾谈到了淡旺季排期、应急储备比例和报价调整的具体做法，这些内容更适合已经遇到类似情况、需要参考他人处理方式的观众。问答类条目则更短，围绕一封读者来信展开，适合想看看「别人怎么问、怎么答」的观众。
+        </p>
+
+        <h3>判断一个条目是否值得投入时间的三个维度</h3>
+        <ul>
+          <li><strong>问题是否具体：</strong>标题越具体，内容越可能围绕一个实际场景展开，而不是泛泛而谈。比如带有「三种说法」「三档比例」的条目，通常有明确的结构。</li>
+          <li><strong>是否附案例或示例：</strong>有具体案例的条目，更容易对照自身情况判断适用性。案例复盘类条目在这一项上通常更强。</li>
+          <li><strong>时长与自己的可用时间是否匹配：</strong>单集 15—25 分钟适合一次性看完，系列与对谈需要分段安排。先看目录再决定是否完整观看，能减少中途放弃。</li>
+        </ul>
+
+        <h3>「一二三区」分类的实际含义</h3>
+        <p>
+          在本系列中，一区主要以基础概念和常见误区为主，适合刚开始接触相关议题的观众；二区侧重案例与实操，需要观众对基础概念已有一定了解；三区则是问答、对谈和来信回应，内容更开放，结论不唯一。选择时可以先从一区的单集建立基本框架，再按兴趣进入二区具体案例，三区适合作为延伸和补充。三个分区之间没有严格的观看顺序，但按这个路径通常会减少理解上的断层。
+        </p>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section class="section" id="guide">
+        <h2>观看路径与选择建议</h2>
+        <p class="section-sub">按可用时间和关注方向安排的观看顺序</p>
+        <p>
+          如果只有碎片时间，建议从 15—20 分钟的单集开始，比如先看「订阅制消费怎么算总账」和「拒绝同事临时请求的三种说法」，两集分别对应消费与沟通两个高频场景，看完能立刻用上。如果有整块时间，可以从「信息筛选三步法」系列入手，三集连续看完约 52 分钟，中间不需要额外背景知识。
+        </p>
+        <p>
+          当单集里的某个点引起兴趣，再进入对应方向的系列或对谈。比如看完预算类单集后，可以接着看「对谈：自由职业的收入波动怎么应对」，了解收入不固定时的处理方式。案例复盘类条目适合放在最后看，因为其中涉及前面概念的综合运用，先建立基本框架再看，理解会更顺畅。
+        </p>
+        <ul>
+          <li><strong>先单集后系列：</strong>用单集快速判断某个方向是否与自己相关，再决定是否投入时间看系列。</li>
+          <li><strong>先二区案例再一区概念：</strong>如果对某个议题已有实际经历，直接从案例复盘进入，比从头看概念更有效率。</li>
+          <li><strong>三区问答作为补充：</strong>遇到具体困惑时，先翻问答类条目看有没有相近问题，再决定是否看完整对谈。</li>
+        </ul>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section faq" id="faq">
+        <h2>常见问题</h2>
+        <p class="section-sub">关于一本道理系列内容的具体疑问</p>
+        <details>
+          <summary>一本道理系列一般多久更新一次？</summary>
+          <p>单集讲解通常每周更新 1—2 条，系列专题按主题推进，每个系列 3—6 集，跨度约两到四周。对谈和问答类更新频率不固定，一般每月 2—3 期。具体日期以更新动态板块的条目记录为准。</p>
+        </details>
+        <details>
+          <summary>一二三区的内容有什么区别？</summary>
+          <p>一区偏基础概念与常见误区，二区侧重案例与实操复盘，三区主要是问答、对谈和来信回应。三个分区按内容深度和形式划分，没有严格的先后顺序，但初次接触建议从一区单集开始。</p>
+        </details>
+        <details>
+          <summary>第一次看从哪个条目开始比较好？</summary>
+          <p>可以从「订阅制消费怎么算总账」或「拒绝同事临时请求的三种说法」这类 15—20 分钟的单集开始，问题具体、结构清晰，看完能判断是否适应这个系列的讲述方式。</p>
+        </details>
+        <details>
+          <summary>系列专题必须按顺序看吗？</summary>
+          <p>大多数系列按步骤递进，比如「信息筛选三步法」三集之间有依赖关系，按顺序看更完整。也有部分系列每集相对独立，如「家庭会议沟通流程」，可以按兴趣单集观看。</p>
+        </details>
+        <details>
+          <summary>对谈类内容适合什么情况下看？</summary>
+          <p>当你想了解不同背景的人如何处理同一类问题时，对谈类比较合适。比如收入波动、职业选择这类没有标准答案的议题，对谈提供的经验参考比单集结论更有用。</p>
+        </details>
+        <details>
+          <summary>案例复盘和普通单集有什么区别？</summary>
+          <p>案例复盘围绕一个具体事件展开，通常包含时间线和决策节点拆解，篇幅比普通单集长，信息密度也更高。普通单集更聚焦单一问题，结构更轻。想对照自身经历时，案例复盘更容易找到相似之处。</p>
+        </details>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <h2>用户评论</h2>
+        <p class="section-sub">来自不同观众的观看反馈</p>
+        <div class="comments">
+          <div class="comment"><span class="who">林间小径</span><span class="txt">「订阅制消费怎么算总账」看完把自己所有订阅列了一遍，才发现有些一年用不了几次。</span><span class="time">11 月 8 日</span></div>
+          <div class="comment"><span class="who">周末不加班</span><span class="txt">拒绝同事那段话术很实用，试了一次，对方没有不高兴，事情也推掉了。</span><span class="time">11 月 8 日</span></div>
+          <div class="comment"><span class="who">陶陶</span><span class="txt">信息筛选三步法第三集讲时效判断的部分，案例选得比较新，看完顺手查了一个最近看到的消息。</span><span class="time">11 月 7 日</span></div>
+          <div class="comment"><span class="who">北岸</span><span class="txt">自由职业对谈里关于报价调整的说法跟我的情况不太一样，不过应急储备那部分可以参考。</span><span class="time">11 月 7 日</span></div>
+          <div class="comment"><span class="who">一只番茄</span><span class="txt">预算三档比例讲得清楚，但示例收入水平偏高，自己换算了一下才用上。</span><span class="time">11 月 6 日</span></div>
+          <div class="comment"><span class="who">慢半拍</span><span class="txt">家庭会议流程四集连着看的，会前议题收集那集最有用，其他三集偏流程化。</span><span class="time">11 月 5 日</span></div>
+          <div class="comment"><span class="who">老周</span><span class="txt">冲动购买复盘那期看着眼熟，几乎每个节点都对得上，冷静期那部分准备试试。</span><span class="time">11 月 5 日</span></div>
+          <div class="comment"><span class="who">Momo</span><span class="txt">来信回应那期有点短，17 分钟刚进入状态就结束了，希望以后能多展开一点。</span><span class="time">11 月 4 日</span></div>
+          <div class="comment"><span class="who">青柠气泡</span><span class="txt">从一区开始按顺序看的，基础概念部分讲得比较稳，适合我这种刚接触的。</span><span class="time">11 月 3 日</span></div>
+          <div class="comment"><span class="who">大陈</span><span class="txt">三区问答第 12 期里有几个关于时间安排的问题，跟我最近的困扰几乎一样。</span><span class="time">11 月 2 日</span></div>
+          <div class="comment"><span class="who">半页纸</span><span class="txt">比价误区那期标题起得好，内容也算扎实，就是例子集中在数码产品，其他品类少。</span><span class="time">11 月 1 日</span></div>
+          <div class="comment"><span class="who">小满</span><span class="txt">对谈类整体偏长，我一般分两次看，中间记点笔记，效果比一口气看完好。</span><span class="time">10 月 30 日</span></div>
+          <div class="comment"><span class="who">南山南</span><span class="txt">案例复盘的时间线做得很清楚，跟着节点走能看出当时为什么会做那个决定。</span><span class="time">10 月 29 日</span></div>
+          <div class="comment"><span class="who">豆浆油条</span><span class="txt">一二三区的划分一开始没太明白，看了概览才搞清楚，建议新观众先看那个。</span><span class="time">10 月 28 日</span></div>
+          <div class="comment"><span class="who">木木夕</span><span class="txt">拒绝同事那集更新后补了远程协作场景，正好用上，比原来的版本更全。</span><span class="time">10 月 27 日</span></div>
+          <div class="comment"><span class="who">阿树</span><span class="txt">信息筛选系列如果能加一集讲怎么判断数据来源，会更完整，现在只有三步。</span><span class="time">10 月 26 日</span></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <h2>相关资讯</h2>
+        <p class="section-sub">近期条目上线与系列动向</p>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news01/600/400" alt="一本道理三区问答精选第12期资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>一本道理·三区问答精选第 12 期上线</h4>
+            <p>本期收录 6 个关于时间安排与优先级排序的提问，回应集中在如何取舍临时任务。</p>
+            <div class="date">2026-11-06</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news02/600/400" alt="消费决策比价误区新条目资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>新条目「消费决策中的比价误区」上线</h4>
+            <p>讲三个常见比价误区，包括只看单价忽略使用频率、忽略退换成本等具体情形。</p>
+            <div class="date">2026-11-03</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news03/600/400" alt="信息筛选三步法系列更新资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>信息筛选三步法系列完成更新</h4>
+            <p>第三集「时效判断」新增两个近期案例，系列三集全部可看，总时长约 52 分钟。</p>
+            <div class="date">2026-10-31</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news04/600/400" alt="家庭会议流程模板开放下载资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>家庭会议沟通流程附赠模板开放下载</h4>
+            <p>第四集配套的会后记录模板及填写示例已上线，可在条目页内直接查看。</p>
+            <div class="date">2026-10-28</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news05/600/400" alt="自由职业对谈完整版上线资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>自由职业收入波动对谈完整版上线</h4>
+            <p>在直播版本基础上补充了 8 分钟问答，涉及淡旺季排期和报价调整的具体做法。</p>
+            <div class="date">2026-10-25</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://picsum.photos/seed/yiben-news06/600/400" alt="一二三区分类索引页更新资讯配图" width="600" height="400" loading="lazy">
+          <div>
+            <h4>一二三区分类索引完成月度整理</h4>
+            <p>10 月新增条目已归入对应分区，一区新增 3 条，二区新增 5 条，三区新增 2 条。</p>
+            <div class="date">2026-10-22</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="related">
+        <h2>相关推荐</h2>
+        <p class="section-sub">延伸方向与相邻条目</p>
+        <div class="rel-tags">
+          <a href="/#featured">订阅制消费清单整理方法</a>
+          <a href="/#featured">拒绝话术的后续跟进</a>
+          <a href="/#featured">信息交叉比对的具体操作</a>
+          <a href="/#featured">应急储备金比例参考</a>
+          <a href="/#featured">家庭会议议题收集模板</a>
+          <a href="/#featured">冲动购买冷静期设置</a>
+          <a href="/#featured">自由职业报价调整案例</a>
+          <a href="/#featured">时间优先级排序问答</a>
+        </div>
+      </section>
+
+      <!-- 11. 热门榜单 -->
+      <section class="section" id="rank">
+        <h2>近期观看热度榜单</h2>
+        <p class="section-sub">按 10 月 8 日至 11 月 8 日观看次数排序</p>
+        <ol class="rank-list">
+          <li><span class="r-name">订阅制消费怎么算总账</span><span class="r-score">3.4 万次</span></li>
+          <li><span class="r-name">信息筛选三步法</span><span class="r-score">4.1 万次</span></li>
+          <li><span class="r-name">拒绝同事临时请求的三种说法</span><span class="r-score">2.8 万次</span></li>
+          <li><span class="r-name">预算分配中的三档比例</span><span class="r-score">2.2 万次</span></li>
+          <li><span class="r-name">对谈：自由职业的收入波动怎么应对</span><span class="r-score">1.9 万次</span></li>
+          <li><span class="r-name">案例复盘：一次冲动购买的全过程</span><span class="r-score">1.6 万次</span></li>
+          <li><span class="r-name">听众来信：如何面对反复催促</span><span class="r-score">1.5 万次</span></li>
+          <li><span class="r-name">家庭会议沟通流程</span><span class="r-score">1.2 万次</span></li>
+        </ol>
+      </section>
+
+      <!-- 12. 条目时间线 -->
+      <section class="section" id="timeline">
+        <h2>条目上线时间线</h2>
+        <p class="section-sub">近期新增与更新节点</p>
+        <ul class="timeline">
+          <li><span class="tl-date">11 月 8 日</span><span class="tl-name">订阅制消费怎么算总账（价格区间更新）</span></li>
+          <li><span class="tl-date">11 月 7 日</span><span class="tl-name">信息筛选三步法·第三集（新增案例）</span></li>
+          <li><span class="tl-date">11 月 6 日</span><span class="tl-name">对谈：自由职业的收入波动怎么应对（完整版）</span></li>
+          <li><span class="tl-date">11 月 3 日</span><span class="tl-name">家庭会议沟通流程·第四集（模板上线）</span></li>
+          <li><span class="tl-date">10 月 27 日</span><span class="tl-name">消费决策中的比价误区（新条目）</span></li>
+          <li><span class="tl-date">10 月 22 日</span><span class="tl-name">一二三区分类索引月度整理</span></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- 右栏 -->
+    <aside class="col-right">
+      <div class="side-card">
+        <h3>热门条目</h3>
+        <ul class="side-list">
+          <li><span class="s-name">信息筛选三步法</span><span class="s-meta">9.0 分</span></li>
+          <li><span class="s-name">订阅制消费怎么算总账</span><span class="s-meta">9.2 分</span></li>
+          <li><span class="s-name">拒绝同事临时请求的三种说法</span><span class="s-meta">8.9 分</span></li>
+          <li><span class="s-name">预算分配中的三档比例</span><span class="s-meta">8.7 分</span></li>
+          <li><span class="s-name">对谈：自由职业的收入波动</span><span class="s-meta">8.8 分</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>近期更新</h3>
+        <ul class="side-list">
+          <li><span class="s-name">订阅制消费总账更新</span><span class="s-meta">11-08</span></li>
+          <li><span class="s-name">信息筛选第三集补案例</span><span class="s-meta">11-07</span></li>
+          <li><span class="s-name">自由职业对谈完整版</span><span class="s-meta">11-06</span></li>
+          <li><span class="s-name">家庭会议模板上线</span><span class="s-meta">11-03</span></li>
+          <li><span class="s-name">比价误区新条目</span><span class="s-meta">10-27</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>分区速览</h3>
+        <ul class="side-list">
+          <li><span class="s-name">一区 · 基础概念</span><span class="s-meta">6 条</span></li>
+          <li><span class="s-name">二区 · 案例实操</span><span class="s-meta">9 条</span></li>
+          <li><span class="s-name">三区 · 问答对谈</span><span class="s-meta">4 条</span></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="36" height="36" rx="8" fill="#e8b84b"/>
+            <path d="M9 23 L18 7 L27 23 L22 27 L18 18 L14 27 Z" fill="#2b3b4e"/>
+          </svg>
+          <strong>一本道理不卡一二三区在线观看</strong>
+        </div>
+        <p>聚合一本道理系列在不同分区中的具体视频条目、主题分类与观看顺序参考，帮助按需查找讲解、案例与对谈内容。</p>
+      </div>
+      <div>
+        <h4>内容板块</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#featured">精选条目</a></li>
+          <li><a href="/#updates">更新动态</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>深度与问答</h4>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">观看路径</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多</h4>
+        <ul>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+          <li><a href="/#timeline">条目时间线</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+      <span>© 2026 一本道理系列条目聚合页</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var feedback = null;
+
+      function showFeedback(msg) {
+        if (!feedback) {
+          feedback = document.createElement('div');
+          feedback.className = 'search-feedback';
+          feedback.setAttribute('role', 'status');
+          var main = document.querySelector('.col-main');
+          if (main) main.insertBefore(feedback, main.firstChild);
+        }
+        feedback.textContent = msg;
+        feedback.style.display = 'block';
+      }
+
+      function clearFeedback() {
+        if (feedback) {
+          feedback.style.display = 'none';
+          feedback.textContent = '';
+        }
+      }
+
+      function doSearch() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        if (!q) {
+          clearFeedback();
+          return;
+        }
+        var sections = document.querySelectorAll('.col-main .section');
+        var found = 0;
+        sections.forEach(function (sec) {
+          var text = sec.textContent.toLowerCase();
+          if (text.indexOf(q) !== -1) {
+            sec.style.display = '';
+            found++;
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+        if (found === 0) {
+          sections.forEach(function (sec) { sec.style.display = ''; });
+          showFeedback('未找到与「' + searchInput.value + '」相关的条目，已恢复全部内容。');
+        } else {
+          showFeedback('找到 ' + found + ' 个包含「' + searchInput.value + '」的板块。清空搜索框可恢复全部。');
+        }
+      }
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', doSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            doSearch();
+          }
+        });
+        searchInput.addEventListener('input', function () {
+          if (!searchInput.value.trim()) {
+            clearFeedback();
+            document.querySelectorAll('.col-main .section').forEach(function (sec) {
+              sec.style.display = '';
+            });
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+              </html>
