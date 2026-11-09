@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海角免费 - 免费资源聚合与社区导航</title>
+  <meta name="description" content="海角免费聚合免费影视、软件、文档与社区热帖，提供每日更新条目、分类导航与使用指南，适合需要免费资源与实用信息的用户浏览。">
+  <meta name="keywords" content="免费影视资源,免费软件下载,免费文档模板,社区热帖,免费资源导航">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-alt: #f0f4fa;
+      --ink: #1a2a3a;
+      --ink-secondary: #3e5569;
+      --muted: #6b7f8f;
+      --line: #dbe3ed;
+      --brand: #0b5e7c;
+      --brand-light: #e5f0f5;
+      --accent: #0f7b9e;
+      --accent-soft: #d4e9f2;
+      --warning: #b45309;
+      --radius-s: 6px;
+      --radius-m: 12px;
+      --radius-l: 20px;
+      --shadow-s: 0 1px 3px rgba(0,20,40,0.06);
+      --shadow-m: 0 4px 12px rgba(0,20,40,0.08);
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --header-height: 64px;
+      --announce-height: 40px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      background: var(--brand);
+      color: #fff;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 16px;
+      text-align: center;
+    }
+
+    .announce-bar span {
+      opacity: 0.9;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      box-shadow: var(--shadow-s);
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .brand-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: -0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex: 1;
+    }
+
+    .main-nav a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .main-nav a:hover {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--surface-alt);
+      border-radius: 30px;
+      padding: 0 12px;
+      height: 38px;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--brand);
+      background: #fff;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      padding: 0 8px;
+      font-size: 0.88rem;
+      outline: none;
+      width: 150px;
+      color: var(--ink);
+    }
+
+    .search-box input::placeholder {
+      color: var(--muted);
+    }
+
+    .search-box button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      color: var(--muted);
+    }
+
+    .search-box button:hover {
+      color: var(--brand);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: var(--brand-light);
+    }
+
+    /* 三栏门户容器 */
+    .page-wrapper {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 24px 24px 40px;
+    }
+
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      align-self: start;
+    }
+
+    .sidebar-card {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      border: 1px solid var(--line);
+      padding: 18px 14px;
+      box-shadow: var(--shadow-s);
+    }
+
+    .sidebar-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: var(--radius-s);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      transition: all 0.15s;
+    }
+
+    .channel-list a:hover {
+      background: var(--brand-light);
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      min-width: 0;
+    }
+
+    /* 首屏区域 */
+    .hero-section {
+      background: linear-gradient(135deg, #e5f0f5 0%, #f0f6fa 100%);
+      border-radius: var(--radius-l);
+      padding: 40px 36px;
+      margin-bottom: 32px;
+      border: 1px solid #d0e2eb;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--brand);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--ink-secondary);
+      margin-bottom: 24px;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary:hover {
+      background: #094a60;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--brand);
+      border: 1px solid var(--brand);
+      border-radius: 30px;
+      padding: 10px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--brand-light);
+      text-decoration: none;
+    }
+
+    .hero-visual {
+      flex-shrink: 0;
+      width: 220px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 板块通用 */
+    .section-block {
+      margin-bottom: 36px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .section-header h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 4px;
+      background: var(--brand);
+      border-radius: 4px;
+    }
+
+    .section-more {
+      font-size: 0.85rem;
+      color: var(--brand);
+      font-weight: 500;
+    }
+
+    .section-more:hover {
+      text-decoration: underline;
+    }
+
+    /* 概览文本 */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      padding: 24px 28px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-s);
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+    }
+
+    .overview-text p {
+      margin-bottom: 12px;
+    }
+
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card-item {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-s);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .card-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-m);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: var(--surface-alt);
+    }
+
+    .card-body {
+      padding: 14px 16px 16px;
+    }
+
+    .card-type {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .card-tags span {
+      font-size: 0.7rem;
+      background: var(--surface-alt);
+      color: var(--ink-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-s);
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      gap: 16px;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+      min-width: 100px;
+    }
+
+    .update-desc {
+      font-size: 0.85rem;
+      color: var(--ink-secondary);
+      flex: 1;
+    }
+
+    .update-time {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* 分类入口网格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+
+    .category-item:hover {
+      border-color: var(--brand);
+      background: var(--brand-light);
+    }
+
+    .category-item a {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .category-item a:hover {
+      text-decoration: none;
+      color: var(--brand);
+    }
+
+    .category-item small {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* 深度解析 */
+    .deep-analysis {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      padding: 28px 32px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-s);
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-analysis h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 24px 0 10px;
+    }
+
+    .deep-analysis h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-analysis p {
+      margin-bottom: 14px;
+    }
+
+    .deep-analysis ul {
+      margin: 10px 0 16px 20px;
+    }
+
+    .deep-analysis li {
+      margin-bottom: 6px;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      padding: 18px 22px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface);
+      transition: background 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item[open] summary {
+      background: var(--brand-light);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-answer {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .comment-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-s);
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .comment-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .comment-nickname {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--ink);
+    }
+
+    .comment-text {
+      font-size: 0.85rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    .comment-date {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .news-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .news-content {
+      flex: 1;
+    }
+
+    .news-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-cloud a {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      transition: all 0.15s;
+    }
+
+    .tag-cloud a:hover {
+      border-color: var(--brand);
+      background: var(--brand-light);
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    /* 右侧辅助栏 */
+    .aux-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--radius-m);
+      border: 1px solid var(--line);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-s);
+    }
+
+    .aux-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hot-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .hot-rank {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: var(--surface-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .hot-rank.top {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .hot-list a {
+      color: var(--ink-secondary);
+      font-weight: 500;
+    }
+
+    .hot-list a:hover {
+      color: var(--brand);
+    }
+
+    .hot-meta {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* 可信度分层 */
+    .trust-layer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .trust-dot.high {
+      background: #0f7b9e;
+    }
+
+    .trust-dot.mid {
+      background: #d97706;
+    }
+
+    .trust-dot.low {
+      background: #9ca3af;
+    }
+
+    .trust-label {
+      color: var(--ink-secondary);
+    }
+
+    .trust-count {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      padding: 40px 24px 24px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-brand .brand-text {
+      font-size: 1.3rem;
+    }
+
+    .footer-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer-col a:hover {
+      color: var(--brand);
+    }
+
+    .footer-bottom {
+      max-width: 1380px;
+      margin: 28px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 搜索无结果提示 */
+    .search-no-result {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 260px;
+      }
+
+      .channel-sidebar {
+        display: none;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .hero-section {
+        padding: 28px 24px;
+      }
+
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-visual {
+        width: 160px;
+        height: 120px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .aux-sidebar {
+        position: static;
+      }
+
+      .site-header {
+        padding: 0 16px;
+      }
+
+      .header-inner {
+        gap: 14px;
+      }
+
+      .brand-text {
+        font-size: 1.2rem;
+      }
+
+      .search-box input {
+        width: 100px;
+      }
+
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: 100%;
+        height: 100px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .update-item {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .news-item {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-wrapper {
+        padding: 16px 16px 32px;
+      }
+
+      .deep-analysis {
+        padding: 20px 18px;
+      }
+    }
+
+    /* 焦点样式 */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* 筛选按钮 */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="status">
+    <span>📢 本周新增 18 条免费资源 · 11 月 8 日热帖《冬季免费影视清单》已发布</span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- 原创 SVG 标志：海角意象 -->
+        <svg class="brand-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#0b5e7c" stroke-width="2.5"/>
+          <path d="M8 26 Q14 18 20 26 Q26 18 32 26" stroke="#0b5e7c" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M12 18 Q16 12 20 18 Q24 12 28 18" stroke="#0f7b9e" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="20" cy="10" r="2" fill="#0b5e7c"/>
+        </svg>
+        <span class="brand-text">海角免费</span>
+      </div>
+
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜索条目、类型…" aria-label="搜索页面内容">
+          <button id="searchBtn" aria-label="执行搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
+        </div>
+        <button class="btn-ghost" id="randomPick">随机一条</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrapper">
+    <div class="portal-layout">
+
+      <!-- 左侧频道索引 -->
+      <aside class="channel-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">频道索引</div>
+          <ul class="channel-list">
+            <li><a href="/#featured">🎬 免费影视</a></li>
+            <li><a href="/#featured">💻 免费软件</a></li>
+            <li><a href="/#featured">📄 文档模板</a></li>
+            <li><a href="/#featured">📚 电子书库</a></li>
+            <li><a href="/#featured">🎵 音乐音效</a></li>
+            <li><a href="/#featured">🖼️ 图片素材</a></li>
+            <li><a href="/#featured">📰 社区热帖</a></li>
+            <li><a href="/#featured">🧰 在线工具</a></li>
+            <li><a href="/#featured">🎓 学习课程</a></li>
+            <li><a href="/#featured">📦 资源合集</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="main-content">
+
+        <!-- 首屏 -->
+        <section class="hero-section" aria-label="主题首屏">
+          <div class="hero-content">
+            <span class="hero-badge">免费资源聚合 · 每日更新</span>
+            <h1>海角免费</h1>
+            <p class="hero-desc">汇聚免费影视、软件、文档、素材与社区热帖，提供可筛选的具体条目与使用路径，适合寻找免费资源和实用工具的用户。</p>
+            <div class="hero-actions">
+              <a href="/#featured" class="btn-primary">浏览精选条目 →</a>
+              <a href="/#categories" class="btn-secondary">按分类查找</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <!-- 首屏 CSS/SVG 视觉构图 -->
+            <svg viewBox="0 0 220 160" width="220" height="160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="10" y="30" width="200" height="100" rx="12" fill="#ffffff" stroke="#c8dbe6" stroke-width="1.5"/>
+              <circle cx="55" cy="65" r="16" fill="#e5f0f5" stroke="#0b5e7c" stroke-width="1.5"/>
+              <path d="M48 65 L55 58 L62 65 L55 72 Z" fill="#0b5e7c"/>
+              <rect x="85" y="52" width="100" height="8" rx="4" fill="#d4e9f2"/>
+              <rect x="85" y="66" width="70" height="6" rx="3" fill="#e5f0f5"/>
+              <rect x="85" y="78" width="85" height="6" rx="3" fill="#e5f0f5"/>
+              <rect x="25" y="98" width="55" height="18" rx="9" fill="#0b5e7c"/>
+              <rect x="90" y="98" width="55" height="18" rx="9" fill="#e5f0f5" stroke="#0b5e7c" stroke-width="1"/>
+              <path d="M25 140 Q55 120 85 140 Q115 120 145 140 Q175 120 205 140" stroke="#0f7b9e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+        </section>
+
+        <!-- 板块1：主题领域概览 -->
+        <section class="section-block" id="overview">
+          <div class="section-header">
+            <h2>免费资源生态概览</h2>
+          </div>
+          <div class="overview-text">
+            <p>海角免费所覆盖的领域，围绕“免费可用”这一核心，延伸出影视、软件、文档、素材、社区分享等多个方向。当前免费影视以短剧、经典老片和独立纪录片为主，更新频率高但画质参差不齐；免费软件集中在开源工具、限时授权和轻量在线应用，适合个人日常使用；文档模板则覆盖简历、合同、课程设计等场景，下载即用。</p>
+            <p>素材类资源包括免费商用图库、音效包和视频转场，需留意授权范围；社区热帖则汇聚用户实测反馈和资源避坑指南，是判断一条资源是否值得投入时间的重要参考。对于刚接触免费资源的用户，建议先从“文档模板”和“在线工具”入手，风险低、即开即用；再逐步尝试影视和软件类资源，并留意版本与系统兼容性。</p>
+            <p>值得关注的具体条目包括《冬季免费影视清单 2026》《开源办公软件合集》《简历模板 60 套（可编辑）》《免费商用音效包 Vol.3》等，它们分别代表了当前免费资源中更新稳定、口碑较集中的方向。</p>
+          </div>
+        </section>
+
+        <!-- 板块2：精选内容推荐 -->
+        <section class="section-block" id="featured">
+          <div class="section-header">
+            <h2>精选内容推荐</h2>
+            <a href="/#featured" class="section-more">查看全部 →</a>
+          </div>
+          <div class="card-grid">
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-movie01/400/300" alt="《冬季免费影视清单 2026》封面图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">影视</span>
+                <h3 class="card-title">冬季免费影视清单 2026</h3>
+                <p class="card-desc">收录 42 部限时免费影片，含 8 部华语修复版和 3 部独立纪录片，可在线观看。</p>
+                <div class="card-tags">
+                  <span>限时免费</span><span>修复版</span><span>纪录片</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 9.2</span><span>更新于 11-07</span></div>
+              </div>
+            </article>
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-soft02/400/300" alt="开源办公软件合集截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">软件</span>
+                <h3 class="card-title">开源办公软件合集</h3>
+                <p class="card-desc">12 款可替代商业套件的开源工具，涵盖文档、表格、演示和 PDF 编辑，支持 Windows/macOS。</p>
+                <div class="card-tags">
+                  <span>开源</span><span>办公</span><span>跨平台</span>
+                </div>
+                <div class="card-meta"><span>⭐ 评分 4.7</span><span>更新于 11-06</span></div>
+              </div>
+            </article>
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-doc03/400/300" alt="简历模板 60 套预览图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">文档</span>
+                <h3 class="card-title">简历模板 60 套（可编辑）</h3>
+                <p class="card-desc">覆盖应届、转行、技术岗等场景，提供 Word/PPT/Canva 三种格式，支持直接修改。</p>
+                <div class="card-tags">
+                  <span>简历</span><span>可编辑</span><span>求职</span>
+                </div>
+                <div class="card-meta"><span>📥 下载 2.1k</span><span>更新于 11-05</span></div>
+              </div>
+            </article>
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-audio04/400/300" alt="免费商用音效包封面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">素材</span>
+                <h3 class="card-title">免费商用音效包 Vol.3</h3>
+                <p class="card-desc">包含 120 个转场、环境、UI 音效，CC0 协议可商用，适合视频剪辑和播客制作。</p>
+                <div class="card-tags">
+                  <span>CC0</span><span>音效</span><span>可商用</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 8.8</span><span>更新于 11-04</span></div>
+              </div>
+            </article>
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-book05/400/300" alt="电子书库免费经典书目" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">电子书</span>
+                <h3 class="card-title">免费经典电子书 200 本</h3>
+                <p class="card-desc">公版文学、哲学、科普经典，提供 EPUB 和 PDF 双格式，目录清晰可检索。</p>
+                <div class="card-tags">
+                  <span>公版</span><span>EPUB</span><span>经典</span>
+                </div>
+                <div class="card-meta"><span>⭐ 评分 4.9</span><span>更新于 11-03</span></div>
+              </div>
+            </article>
+            <article class="card-item">
+              <img class="card-img" src="https://picsum.photos/seed/haijiao-tool06/400/300" alt="在线工具箱页面截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">工具</span>
+                <h3 class="card-title">在线格式转换工具箱</h3>
+                <p class="card-desc">支持 PDF 转 Word、图片压缩、视频转码等 15 种常用格式转换，浏览器内完成。</p>
+                <div class="card-tags">
+                  <span>在线工具</span><span>格式转换</span><span>免安装</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 9.0</span><span>更新于 11-02</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 板块3：最新更新 -->
+        <section class="section-block" id="updates">
+          <div class="section-header">
+            <h2>最新更新与动态</h2>
+          </div>
+          <div class="update-list" id="updateList">
+            <div class="update-item">
+              <span class="update-name">冬季免费影视清单 2026</span>
+              <span class="update-desc">新增 8 部华语修复版影片，支持 1080P 在线观看</span>
+              <span class="update-time">今天 09:30</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">开源办公软件合集</span>
+              <span class="update-desc">收录 LibreOffice 24.8 最新稳定版，更新兼容性说明</span>
+              <span class="update-time">昨天 21:10</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">简历模板 60 套（可编辑）</span>
+              <span class="update-desc">新增 10 套技术岗专用模板，含作品集排版示例</span>
+              <span class="update-time">11 月 7 日</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">免费商用音效包 Vol.3</span>
+              <span class="update-desc">补充 30 个环境音效，授权说明更新为 CC0 1.0</span>
+              <span class="update-time">11 月 6 日</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">社区热帖：避坑指南 11 月版</span>
+              <span class="update-desc">整理近期免费软件捆绑安装案例，新增 6 条提醒</span>
+              <span class="update-time">11 月 5 日</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">电子书库免费经典书目</span>
+              <span class="update-desc">上架《月亮与六便士》等 12 本公版书新译本</span>
+              <span class="update-time">11 月 4 日</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">在线格式转换工具箱</span>
+              <span class="update-desc">新增 HEIC 转 JPG 功能，修复大文件上传超时问题</span>
+              <span class="update-time">11 月 3 日</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">免费 PPT 模板 30 套</span>
+              <span class="update-desc">发布 2026 年终总结专题模板，支持 16:9 宽屏</span>
+              <span class="update-time">11 月 2 日</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块4：分类入口 -->
+        <section class="section-block" id="categories">
+          <div class="section-header">
+            <h2>分类入口</h2>
+          </div>
+          <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="影视">影视</button>
+            <button class="filter-btn" data-filter="软件">软件</button>
+            <button class="filter-btn" data-filter="文档">文档</button>
+            <button class="filter-btn" data-filter="素材">素材</button>
+            <button class="filter-btn" data-filter="工具">工具</button>
+          </div>
+          <div class="category-grid" id="categoryGrid">
+            <div class="category-item" data-cat="影视"><a href="/#featured">🎬 免费影视</a><small>限时片单 · 修复版</small></div>
+            <div class="category-item" data-cat="软件"><a href="/#featured">💻 免费软件</a><small>开源 · 限时授权</small></div>
+            <div class="category-item" data-cat="文档"><a href="/#featured">📄 文档模板</a><small>简历 · 合同 · 报告</small></div>
+            <div class="category-item" data-cat="素材"><a href="/#featured">🖼️ 图片素材</a><small>免版权 · 可商用</small></div>
+            <div class="category-item" data-cat="素材"><a href="/#featured">🎵 音效音乐</a><small>CC0 · 剪辑配乐</small></div>
+            <div class="category-item" data-cat="工具"><a href="/#featured">🧰 在线工具</a><small>转换 · 压缩 · 识别</small></div>
+            <div class="category-item" data-cat="文档"><a href="/#featured">📚 电子书库</a><small>公版 · 技术手册</small></div>
+            <div class="category-item" data-cat="影视"><a href="/#featured">📰 社区热帖</a><small>避坑 · 实测 · 问答</small></div>
+          </div>
+        </section>
+
+        <!-- 板块5：深度解析正文 -->
+        <section class="section-block" id="deep-dive">
+          <div class="section-header">
+            <h2>免费资源类型差异与选择判断</h2>
+          </div>
+          <div class="deep-analysis">
+            <h3>免费影视：限时窗口与画质分级</h3>
+            <p>免费影视资源通常分为“平台限时免费”“版权方公开放映”和“社区自建片单”三类。限时免费的窗口期往往只有 7 至 15 天，画质以 720P 为主，部分修复版可达 1080P。公开放映的经典老片画质稳定，但字幕版本较杂，建议优先选择标注“修复版”或“官方字幕”的条目。社区自建片单更新快，但需逐条核对清晰度和音轨完整度。</p>
+            <p>判断一条免费影视资源是否值得看，先看三个指标：是否标注片源版本（如“蓝光修复”“WEB-DL”）、是否有完整字幕、发布时间是否在近 30 天内。以《冬季免费影视清单 2026》为例，其中 8 部华语修复版均标注了片源和字幕信息，可信度较高。</p>
+
+            <h3>免费软件：开源协议与捆绑风险</h3>
+            <p>免费软件大致分为开源软件、免费版（功能受限）和限时授权三种。开源软件最透明，可查看许可证类型（MIT、GPL、Apache 等），但部分工具安装包体积较大。免费版软件需留意功能阉割和导出水印。限时授权类软件在到期后可能转为付费，适合短期项目使用。</p>
+            <ul>
+              <li><strong>优先选择</strong>：GitHub 或官网直接下载的开源工具，如 LibreOffice、GIMP、Audacity。</li>
+              <li><strong>谨慎对待</strong>：下载站打包的“绿色版”，可能存在捆绑插件或修改主页行为。</li>
+              <li><strong>验证方法</strong>：安装前查看文件数字签名和哈希值，安装时取消勾选附加组件。</li>
+            </ul>
+
+            <h3>文档与素材：授权范围决定可用边界</h3>
+            <p>免费文档模板和素材的核心差异在授权范围。简历模板通常允许个人修改使用，但不可转售；音效和图片素材若标注 CC0，可商用且无需署名；标注“仅限个人使用”的素材不能用于商业项目。建议在使用前确认授权文件是否随资源一同提供，避免后续纠纷。</p>
+            <p>以《免费商用音效包 Vol.3》为例，其授权说明明确为 CC0 1.0，意味着可以自由复制、修改和商用，无需标注来源，适合视频创作者和播客制作者直接使用。</p>
+          </div>
+        </section>
+
+        <!-- 板块6：体验指南 -->
+        <section class="section-block" id="guide">
+          <div class="section-header">
+            <h2>免费资源消费路径与判断依据</h2>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h3>从低风险类型开始</h3>
+                <p>文档模板和在线工具无需安装、授权清晰，适合作为接触免费资源的第一步。先熟悉“下载—修改—使用”的流程，再尝试软件和影视资源。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h3>核对更新时间与版本号</h3>
+                <p>免费资源的时效性很强。软件看版本号和更新日期，影视看片源上线时间，素材看授权版本。优先选择近 30 天内更新、版本号明确的条目。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h3>比较同类条目的具体参数</h3>
+                <p>同样名为“免费简历模板”，有的包含 60 套可编辑文件，有的只提供 PDF 预览。比较时看文件格式、可编辑性、是否含封面信模板，而不仅看数量。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h3>参考社区实测反馈</h3>
+                <p>软件类资源尤其需要看用户实测。关注评论中提到的安装包大小、是否捆绑、系统兼容性等具体信息，比单纯看评分更有参考价值。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块7：FAQ -->
+        <section class="section-block" id="faq">
+          <div class="section-header">
+            <h2>常见问题</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>免费影视资源一般多久更新一次？</summary>
+              <div class="faq-answer">免费影视的更新频率不固定。限时免费片单通常每周更新 1—2 次，修复版影片的更新周期约 10—15 天。社区自建片单更新较快，但需要自行核对片源质量。</div>
+            </details>
+            <details class="faq-item">
+              <summary>开源软件和免费版软件有什么区别？</summary>
+              <div class="faq-answer">开源软件提供源代码，可自由使用、修改和分发，通常无功能限制；免费版软件是商业软件的免费版本，功能可能受限或带水印。选择时优先看授权协议和功能完整度。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第一次接触免费资源，从哪个条目开始比较好？</summary>
+              <div class="faq-answer">建议从《简历模板 60 套（可编辑）》或《在线格式转换工具箱》开始。前者是文档类资源，下载后可直接修改；后者免安装、即开即用，风险较低。</div>
+            </details>
+            <details class="faq-item">
+              <summary>免费商用素材需要署名吗？</summary>
+              <div class="faq-answer">取决于授权类型。CC0 协议不要求署名，可自由商用；CC BY 协议要求标注原作者和来源。使用前务必查看素材附带的授权说明文件。</div>
+            </details>
+            <details class="faq-item">
+              <summary>免费软件安装时需要注意什么？</summary>
+              <div class="faq-answer">注意取消勾选捆绑安装的附加软件，检查安装包的数字签名，优先从官方网站或 GitHub 发布页下载。安装后可用安全软件扫描一次。</div>
+            </details>
+            <details class="faq-item">
+              <summary>电子书库的免费经典书目是什么格式？</summary>
+              <div class="faq-answer">目前提供 EPUB 和 PDF 两种格式。EPUB 适合手机和阅读器，可调整字体大小；PDF 保留原版排版，适合在电脑上阅读和打印。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 板块8：用户评论 -->
+        <section class="section-block" id="comments">
+          <div class="section-header">
+            <h2>用户评论</h2>
+          </div>
+          <div class="comment-grid">
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">林</div><span class="comment-nickname">林间散步</span></div>
+              <p class="comment-text">冬季影视清单里的修复版画质确实比普通版好，字幕也完整，省了自己找片源的时间。</p>
+              <div class="comment-date">11 月 7 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">陈</div><span class="comment-nickname">陈小北</span></div>
+              <p class="comment-text">开源办公软件合集很实用，LibreOffice 的兼容性说明写得清楚，装之前就知道会遇到什么问题。</p>
+              <div class="comment-date">11 月 7 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">张</div><span class="comment-nickname">张三丰的猫</span></div>
+              <p class="comment-text">简历模板数量多，但有些排版太花哨，技术岗还是选简洁版更合适。</p>
+              <div class="comment-date">11 月 6 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">王</div><span class="comment-nickname">王木木</span></div>
+              <p class="comment-text">音效包拿来剪视频很方便，CC0 不用署名这点对个人创作者友好。</p>
+              <div class="comment-date">11 月 6 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">赵</div><span class="comment-nickname">赵小刀</span></div>
+              <p class="comment-text">格式转换工具挺快的，HEIC 转 JPG 那个功能解决了 iPhone 照片传电脑的问题。</p>
+              <div class="comment-date">11 月 5 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">孙</div><span class="comment-nickname">孙悟饭</span></div>
+              <p class="comment-text">社区热帖的避坑指南有用，上次差点装了个捆绑软件，看评论才注意到。</p>
+              <div class="comment-date">11 月 5 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">周</div><span class="comment-nickname">周周不是粥</span></div>
+              <p class="comment-text">电子书库的 EPUB 排版比预想的好，目录能跳转，睡前看一章挺方便。</p>
+              <div class="comment-date">11 月 4 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">吴</div><span class="comment-nickname">吴所不知</span></div>
+              <p class="comment-text">免费影视清单更新频率还行，但希望能标注每部的时长，方便安排观看。</p>
+              <div class="comment-date">11 月 4 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">郑</div><span class="comment-nickname">郑在吃饭</span></div>
+              <p class="comment-text">PPT 模板 30 套里的年终总结专题很合适，直接改文字就能用，省了半天时间。</p>
+              <div class="comment-date">11 月 3 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">李</div><span class="comment-nickname">李慢慢</span></div>
+              <p class="comment-text">软件合集里那个 PDF 编辑工具不错，免费版功能够用，不用买会员。</p>
+              <div class="comment-date">11 月 3 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">许</div><span class="comment-nickname">许愿树</span></div>
+              <p class="comment-text">音效包的解压密码找了半天，建议在页面上标清楚，或者直接放无密码版本。</p>
+              <div class="comment-date">11 月 2 日</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-header"><div class="comment-avatar">何</div><span class="comment-nickname">何首乌</span></div>
+              <p class="comment-text">电子书库的公版书种类挺全，希望以后能加上按出版社筛选的功能。</p>
+              <div class="comment-date">11 月 2 日</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块9：相关资讯 -->
+        <section class="section-block" id="news">
+          <div class="section-header">
+            <h2>相关资讯</h2>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">《冬季免费影视清单 2026》新增 8 部华语修复版</div>
+                <div class="news-summary">涵盖 1980—2000 年代经典影片，均标注片源版本和字幕信息，支持在线观看。</div>
+              </div>
+              <span class="news-date">2026-11-07</span>
+            </div>
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">LibreOffice 24.8 稳定版发布，开源办公套件兼容性提升</div>
+                <div class="news-summary">新版改进了对 docx 格式的渲染精度，表格和图表显示更接近商业软件。</div>
+              </div>
+              <span class="news-date">2026-11-06</span>
+            </div>
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">CC0 音效库新增 30 个环境音，社区下载量破五千</div>
+                <div class="news-summary">新增雨声、街道、咖啡馆等场景音效，全部采用 CC0 授权，可商用。</div>
+              </div>
+              <span class="news-date">2026-11-05</span>
+            </div>
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">社区避坑指南 11 月版：警惕下载站捆绑安装包</div>
+                <div class="news-summary">整理近期 6 起捆绑安装案例，涉及三款常用工具，附安全下载渠道建议。</div>
+              </div>
+              <span class="news-date">2026-11-04</span>
+            </div>
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">公版电子书新上架 12 本，《月亮与六便士》新译本可下载</div>
+                <div class="news-summary">电子书库更新公版书目，提供 EPUB 和 PDF 双格式，目录结构完整。</div>
+              </div>
+              <span class="news-date">2026-11-03</span>
+            </div>
+            <div class="news-item">
+              <div class="news-content">
+                <div class="news-title">在线工具新增 HEIC 转 JPG 功能，支持批量处理</div>
+                <div class="news-summary">转换在浏览器本地完成，不上传服务器，适合处理手机照片。</div>
+              </div>
+              <span class="news-date">2026-11-02</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块10：相关推荐 -->
+        <section class="section-block" id="related">
+          <div class="section-header">
+            <h2>相关推荐</h2>
+          </div>
+          <div class="tag-cloud">
+            <a href="/#featured">华语修复版影片</a>
+            <a href="/#featured">开源 PDF 编辑器</a>
+            <a href="/#featured">技术岗简历模板</a>
+            <a href="/#featured">CC0 环境音效</a>
+            <a href="/#featured">公版文学 EPUB</a>
+            <a href="/#featured">图片批量压缩工具</a>
+            <a href="/#featured">年终总结 PPT 模板</a>
+            <a href="/#featured">独立纪录片片单</a>
+          </div>
+        </section>
+
+        <!-- 板块11：补充板块 - 热门榜单 -->
+        <section class="section-block" id="hot-rank">
+          <div class="section-header">
+            <h2>本周热门条目榜</h2>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-name">1. 冬季免费影视清单 2026</span>
+              <span class="update-desc">42 部限时免费影片，修复版画质突出</span>
+              <span class="update-time">🔥 9.2</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">2. 在线格式转换工具箱</span>
+              <span class="update-desc">15 种格式互转，浏览器内完成</span>
+              <span class="update-time">🔥 9.0</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">3. 开源办公软件合集</span>
+              <span class="update-desc">12 款工具替代商业套件</span>
+              <span class="update-time">🔥 8.9</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">4. 免费商用音效包 Vol.3</span>
+              <span class="update-desc">120 个 CC0 音效，可商用</span>
+              <span class="update-time">🔥 8.8</span>
+            </div>
+            <div class="update-item">
+              <span class="update-name">5. 简历模板 60 套（可编辑）</span>
+              <span class="update-desc">覆盖应届、转行、技术岗</span>
+              <span class="update-time">🔥 8.5</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右侧辅助栏 -->
+      <aside class="aux-sidebar">
+        <div class="aux-card">
+          <div class="aux-title">🔥 实时热榜</div>
+          <ul class="hot-list">
+            <li><span class="hot-rank top">1</span><a href="/#featured">冬季免费影视清单</a><span class="hot-meta">9.2</span></li>
+            <li><span class="hot-rank top">2</span><a href="/#featured">在线格式转换工具</a><span class="hot-meta">9.0</span></li>
+            <li><span class="hot-rank top">3</span><a href="/#featured">开源办公软件合集</a><span class="hot-meta">8.9</span></li>
+            <li><span class="hot-rank">4</span><a href="/#featured">免费商用音效包</a><span class="hot-meta">8.8</span></li>
+            <li><span class="hot-rank">5</span><a href="/#featured">简历模板 60 套</a><span class="hot-meta">8.5</span></li>
+            <li><span class="hot-rank">6</span><a href="/#featured">免费经典电子书</a><span class="hot-meta">8.3</span></li>
+          </ul>
+        </div>
+
+        <div class="aux-card">
+          <div class="aux-title">📊 资源可信度分层</div>
+          <div class="trust-layer">
+            <div class="trust-item">
+              <span class="trust-dot high"></span>
+              <span class="trust-label">官方/开源直链</span>
+              <span class="trust-count">32 条</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot mid"></span>
+              <span class="trust-label">社区实测可信</span>
+              <span class="trust-count">47 条</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot low"></span>
+              <span class="trust-label">待验证/需留意</span>
+              <span class="trust-count">19 条</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="aux-card">
+          <div class="aux-title">📅 近期时间线</div>
+          <ul class="hot-list">
+            <li><span class="hot-rank">11-07</span><a href="/#updates">影视清单新增 8 部修复版</a></li>
+            <li><span class="hot-rank">11-06</span><a href="/#updates">LibreOffice 24.8 收录</a></li>
+            <li><span class="hot-rank">11-05</span><a href="/#updates">避坑指南 11 月版发布</a></li>
+            <li><span class="hot-rank">11-04</span><a href="/#updates">音效包补充 30 个环境音</a></li>
+            <li><span class="hot-rank">11-03</span><a href="/#updates">电子书上架 12 本公版书</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="brand-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" stroke="#0b5e7c" stroke-width="2.5"/>
+            <path d="M8 26 Q14 18 20 26 Q26 18 32 26" stroke="#0b5e7c" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M12 18 Q16 12 20 18 Q24 12 28 18" stroke="#0f7b9e" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="10" r="2" fill="#0b5e7c"/>
+          </svg>
+          <span class="brand-text">海角免费</span>
+        </div>
+        <p class="footer-desc">汇聚免费影视、软件、文档、素材与社区热帖，提供可筛选的具体条目与使用路径。</p>
+      </div>
+      <div class="footer-col">
+        <h4>资源分类</h4>
+        <ul>
+          <li><a href="/#featured">免费影视</a></li>
+          <li><a href="/#featured">免费软件</a></li>
+          <li><a href="/#featured">文档模板</a></li>
+          <li><a href="/#featured">图片素材</a></li>
+          <li><a href="/#featured">音效音乐</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>社区导航</h4>
+        <ul>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#hot-rank">热门榜单</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助</h4>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#guide">消费路径</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#overview">领域概览</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 海角免费 · 内容聚合示例页面</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // 搜索功能
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const updateList = document.getElementById('updateList');
+      const categoryGrid = document.getElementById('categoryGrid');
+      const noResult = document.createElement('div');
+      noResult.className = 'search-no-result';
+      noResult.textContent = '没有找到匹配的条目，试试其他关键词。';
+      noResult.style.display = 'none';
+      document.querySelector('.main-content').appendChild(noResult);
+
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        const updateItems = document.querySelectorAll('.update-item');
+        const categoryItems = document.querySelectorAll('.category-item');
+        if (!query) {
+          updateItems.forEach(el => el.style.display = '');
+          categoryItems.forEach(el => el.style.display = '');
+          noResult.style.display = 'none';
+          return;
+        }
+        let visibleCount = 0;
+        updateItems.forEach(el => {
+          const text = el.textContent.toLowerCase();
+          if (text.includes(query)) {
+            el.style.display = '';
+            visibleCount++;
+          } else {
+            el.style.display = 'none';
+          }
+        });
+        categoryItems.forEach(el => {
+          const text = el.textContent.toLowerCase();
+          if (text.includes(query)) {
+            el.style.display = '';
+            visibleCount++;
+          } else {
+            el.style.display = 'none';
+          }
+        });
+        noResult.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') performSearch();
+      });
+      searchInput.addEventListener('input', performSearch);
+
+      // 分类筛选
+      const filterBar = document.getElementById('filterBar');
+      const filterBtns = filterBar.querySelectorAll('.filter-btn');
+      const categoryItems = document.querySelectorAll('.category-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          categoryItems.forEach(item => {
+            if (filter === 'all' || item.dataset.cat === filter) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 随机一条
+      document.getElementById('randomPick').addEventListener('click', () => {
+        const items = document.querySelectorAll('.card-item');
+        if (items.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * items.length);
+        items[randomIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        items[randomIndex].style.transition = 'box-shadow 0.3s';
+        items[randomIndex].style.boxShadow = '0 0 0 3px #0b5e7c';
+        setTimeout(() => {
+          items[randomIndex].style.boxShadow = '';
+        }, 1500);
+      });
+    })();
+  </script>
+</body>
+          </html>
